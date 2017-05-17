@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Hello World -- Response</title>
+</h:head>
+<h:body>
+	<h:form id="form">
+		<table>
+			<tr>
+				<td>
+				<h:link value="Listenausgabe"
+						outcome="#{Aufgabe5_2.getList()}" /><br /></td>
+			</tr>
+			<tr>
+				<td><h:inputText id="gogo" value="suchen" /></td>
+			</tr>
+		</table>
+
+		<h:commandButton value="Submit" action="#{Aufgabe5_2.getSearch()}" />
+
+
+	</h:form>
+
+</h:body>
+</html>
