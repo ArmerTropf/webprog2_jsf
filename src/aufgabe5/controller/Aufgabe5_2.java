@@ -11,6 +11,7 @@ import aufgabe5.businessTier.PersonsBean;
 import aufgabe5.businessTier.PersonsFactory;
 import aufgabe5.dataBeans.PersonDataBean;
 import aufgabe5.dataBeans.PersonsDataBean;
+import aufgabe5.dataTier.PersonDummyDataTier;
 import aufgabe5.model.Person;
 
 /**
@@ -34,13 +35,13 @@ public class Aufgabe5_2 {
 	@PostConstruct
 	public void init() {
 
-		// persons = new PersonsBean(new PersonDummyDataTier());
-		// persons = PersonsFactory.getNewDummyPersonsBean();
+//		 persons = new PersonsBean(new PersonDummyDataTier());
+//		 persons = PersonsFactory.getNewDummyPersonsBean();
 		persons = PersonsFactory.getNewXMLPersonsBean();
 
 	}
 
-	public String getList() {
+	public List<PersonDataBean> getList() {
 
 		// String action =
 		// FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("action");
@@ -48,12 +49,11 @@ public class Aufgabe5_2 {
 		PersonsDataBean personsData = new PersonsDataBean(persons.getAllPersons());
 		user.clear();
 		for (PersonDataBean personDataBean : personsData.getPersons()) {
-			
+			System.out.println(personDataBean.getVorname());
 			user.add(personDataBean);
 		}
 
-		jsp = "Listenausgabe";
-		return jsp;
+		return user;
 
 	}
 

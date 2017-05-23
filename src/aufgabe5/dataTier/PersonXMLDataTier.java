@@ -13,7 +13,7 @@ import org.w3c.dom.NodeList;
 import aufgabe5.model.Person;
 
 public class PersonXMLDataTier extends CacheDataTier<Person> {
-	private String XML = "C:/Users/ArmerTropf/Documents/GitHub/webprog2/WebContent/aufgabe5/persons.xml";
+	private String XML = "/home/mguenster/Downloads/persons.xml";
 
 	public PersonXMLDataTier() {
 		searchUser("");
