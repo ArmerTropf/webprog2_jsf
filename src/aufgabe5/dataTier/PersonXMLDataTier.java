@@ -17,6 +17,7 @@ import aufgabe5.model.Person;
 @ManagedBean(name="personDataTier")
 @ApplicationScoped
 public class PersonXMLDataTier extends CacheDataTier<Person> {
+
 	private String XML = "C:/Users/Andre Schriever/Documents/GitHub/webprog2/WebContent/aufgabe5/persons.xml";
 
 	public PersonXMLDataTier() {

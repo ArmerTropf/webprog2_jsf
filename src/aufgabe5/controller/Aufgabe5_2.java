@@ -7,10 +7,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 import aufgabe5.businessTier.PersonsBean;
-import aufgabe5.businessTier.PersonsFactory;
 import aufgabe5.dataBeans.PersonDataBean;
 import aufgabe5.dataBeans.PersonsDataBean;
 import aufgabe5.model.Person;
@@ -28,7 +26,6 @@ public class Aufgabe5_2 {
 	
 	public void setName(String name) { this.name = name;}
 	public String getName() { return this.name;}
-	
 	
 	
 	@ManagedProperty(value="#{personsBean}")
@@ -55,7 +52,6 @@ public class Aufgabe5_2 {
 
 	}
 
-	
 	public List<PersonDataBean> getList() {
 
 //		 String action =
@@ -64,20 +60,16 @@ public class Aufgabe5_2 {
 		PersonsDataBean personsData = new PersonsDataBean(persons.getAllPersons());
 		user.clear();
 		for (PersonDataBean personDataBean : personsData.getPersons()) {
-			
+			System.out.println(personDataBean.getVorname());
 			user.add(personDataBean);
 		}
 
-		jsp = "Listenausgabe";
 		return user;
 
 	}
 
 	public List<PersonDataBean> getDetail(int userID) {
 
-		
-		String action =
-				 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("vorname");
 		Person person = persons.getPerson(userID);
 		user.clear();
 		
