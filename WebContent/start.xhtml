@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:jsp="http://java.sun.com/JSP/Page"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
 <jsp:directive.page isELIgnored="false"></jsp:directive.page>
 <head>
 
@@ -10,11 +11,14 @@
 <body>
 	<H1>Auswahl</H1>
 
-	<a href="./Aufgabe5_2?action=liste"> Listenausgabe </a>
+	<a href="Listenausgabe.xhtml"> Listenausgabe </a>
 	<br />
-	<form action="./Aufgabe5_2?action=detail_name" method="POST">
-		<input type="text" name="name" /> 
-		<input type="submit" value="suche" />
-	</form>
+	
+	
+	<h:form>
+    	<h:inputText value="#{Aufgabe5_2.name}" required="true" />
+    	<h:commandButton value="submit" action="#{Aufgabe5_2.getSearch()}" />
+    	<h:messages />
+	</h:form>
 </body>
 </html>

@@ -5,7 +5,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import aufgabe5.businessTier.PersonsBean;
 import aufgabe5.businessTier.PersonsFactory;
@@ -21,7 +23,20 @@ import aufgabe5.model.Person;
 @ManagedBean(name = "Aufgabe5_2")
 @SessionScoped
 public class Aufgabe5_2 {
+	
+	private String name = "";
+	
+	public void setName(String name) { this.name = name;}
+	public String getName() { return this.name;}
+	
+	
+	
+	@ManagedProperty(value="#{personsBean}")
 	private PersonsBean persons;
+
+	public void setPersons(PersonsBean persons) {
+		this.persons = persons;
+	}
 
 	String jsp;
 	private List<PersonDataBean> user = new ArrayList<PersonDataBean>();
@@ -36,14 +51,15 @@ public class Aufgabe5_2 {
 
 		// persons = new PersonsBean(new PersonDummyDataTier());
 		// persons = PersonsFactory.getNewDummyPersonsBean();
-		persons = PersonsFactory.getNewXMLPersonsBean();
+//		persons = PersonsFactory.getNewXMLPersonsBean();
 
 	}
 
-	public String getList() {
+	
+	public List<PersonDataBean> getList() {
 
-		// String action =
-		// FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("action");
+//		 String action =
+//		 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("action");
 
 		PersonsDataBean personsData = new PersonsDataBean(persons.getAllPersons());
 		user.clear();
@@ -53,36 +69,41 @@ public class Aufgabe5_2 {
 		}
 
 		jsp = "Listenausgabe";
-		return jsp;
+		return user;
 
 	}
 
-	public String getDetail(int userID) {
+	public List<PersonDataBean> getDetail(int userID) {
 
+		
+		String action =
+				 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("vorname");
 		Person person = persons.getPerson(userID);
-//		user.clear();
+		user.clear();
 		
 		if (person == null)
-			return "index";
+			System.out.println("keine person");
+	
 		PersonDataBean personData = new PersonDataBean(person);
 		user.add(personData);
 
 		jsp = "Detailausgabe";
-		return jsp;
+		return user;
 	}
 
-	public String getSearch(int action) {
+	public String getSearch() {
 
-		//String action = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("gogo");
+//		String vorname = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("vorname");
+//		System.out.println(vorname);
 
-		
-		Person person = persons.getPerson(action);
+		user.clear();
+		Person person = persons.getPersonByName(this.name);
 		if (person == null)
 			return "index";
 		PersonDataBean personData = new PersonDataBean(person);
 		user.add(personData);
 
-		jsp = "Detailausgabe";
+		jsp = "Detailausgabe.xhtml";
 		return jsp;
 	}
 

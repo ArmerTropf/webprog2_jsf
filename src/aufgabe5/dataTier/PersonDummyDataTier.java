@@ -1,7 +1,9 @@
 package aufgabe5.dataTier;
 
-import aufgabe5.model.Person;
+import javax.faces.bean.ManagedBean;
 
+import aufgabe5.model.Person;
+@ManagedBean(name="personDummyDataTier")
 public class PersonDummyDataTier extends CacheDataTier<Person> {
 	
 	public PersonDummyDataTier(){

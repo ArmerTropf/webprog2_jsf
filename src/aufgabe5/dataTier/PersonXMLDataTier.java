@@ -2,6 +2,8 @@ package aufgabe5.dataTier;
 
 import java.io.File;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -12,8 +14,10 @@ import org.w3c.dom.NodeList;
 
 import aufgabe5.model.Person;
 
+@ManagedBean(name="personDataTier")
+@ApplicationScoped
 public class PersonXMLDataTier extends CacheDataTier<Person> {
-	private String XML = "C:/Users/ArmerTropf/Documents/GitHub/webprog2/WebContent/aufgabe5/persons.xml";
+	private String XML = "C:/Users/Andre Schriever/Documents/GitHub/webprog2/WebContent/aufgabe5/persons.xml";
 
 	public PersonXMLDataTier() {
 		searchUser("");
@@ -97,7 +101,11 @@ public class PersonXMLDataTier extends CacheDataTier<Person> {
 						} else
 							person.setNachname("*");
 
+//						id = eElement.getElementsByTagName("person id").item(0).getTextContent();
+//						person.setId(id++);
+						
 					}
+					
 					add(person);
 					//names.put(vorname, nachname);
 				}

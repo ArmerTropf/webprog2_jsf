@@ -10,6 +10,8 @@ public interface IDataTier<T extends Model> {
 	
 	public T get(int id);
 	
+//	public T getByName(String name);
+	
 	public void add(T obj);
 	
 	public void remove(T obj);

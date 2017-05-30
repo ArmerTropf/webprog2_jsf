@@ -10,15 +10,15 @@ public class PersonsFactory {
 		
 	}
 	
-	public static PersonsBean getNewDummyPersonsBean() {
-				
-		return new PersonsBean(new PersonDummyDataTier());
-		
-	}
-	
-	public static PersonsBean getNewXMLPersonsBean() {
-		return new PersonsBean(new PersonXMLDataTier());	
-	}
+//	public static PersonsBean getNewDummyPersonsBean() {
+//				
+//		return new PersonsBean(new PersonDummyDataTier());
+//		
+//	}
+//	
+//	public static PersonsBean getNewXMLPersonsBean() {
+//		return new PersonsBean(new PersonXMLDataTier());	
+//	}
 	
 	
 }

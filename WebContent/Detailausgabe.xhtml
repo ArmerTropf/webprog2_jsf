@@ -8,15 +8,20 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
+<f:metadata>
+	<f:viewParam name="id" value="#{id}" />
+	
+</f:metadata>
 <h:head>
 	<title><ui:insert name="title">HALLO</ui:insert></title>
 </h:head>
 <h:body>
 	<div id="header" />
+	
 	<div id="content" class="content">
 		<h:dataTable value="#{Aufgabe5_2.user}" var="user">
 			<h:column>
-				#{user.vorname} #{user.nachname} #{user.wohnort}   
+				<br/>#{user.vorname} #{user.nachname} #{user.wohnort}   
 			</h:column>
 		</h:dataTable>
 	</div>

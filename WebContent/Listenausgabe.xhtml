@@ -14,14 +14,10 @@
 <h:body>
 	<div id="header" />
 	<div id="content" class="content">
-		<h:dataTable value="#{Aufgabe5_2.user}" var="user">
+		<h:dataTable value="#{Aufgabe5_2.list}" var="user">
 			<h:column>
-				<h:outputLink id="link1" value="http://www.mycompany.com">
-					<f:param name="projectId" value="123" />
-					<f:param name="userId" value="45" />
-					<h:outputText value="Open Project" />
-				</h:outputLink>
-					 #{user.vorname} #{user.nachname} #{user.wohnort}
+				<a href="Detailausgabe.xhtml?id=#{user.id}">#{user.vorname}</a>
+					 #{user.nachname} #{user.wohnort}
 			</h:column>
 		</h:dataTable>
 	</div>

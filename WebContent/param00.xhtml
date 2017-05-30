@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Example by TU -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ff="http://xmlns.jcp.org/jsf/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<!-- Due to a bug in Mojarra use the old name space  
+     'xmlns:f="http://java.sun.com/jsf/core"' instead of the new one 
+     'xmlns:f="http://xmlns.jcp.org/jsf/core"'; 
+     otherwise 'f:viewParam' won't work!
+ -->
+
+<f:metadata>
+	<f:viewParam name="foo" value="#{foo}" />
+	<f:viewParam name="bar" value="#{bar}" />
+</f:metadata>
+
+<h:head>
+	<title>Retrieving Request Parameters</title>
+</h:head>
+<h:body>
+	<h1>Retrieving Request Parameters</h1>
+
+	<ul>
+		<li>value of parameter <code>foo</code>: <code>#{foo}</code></li>
+		<li>value of parameter <code>bar</code>: <code>#{bar}</code></li>
+	</ul>
+
+	<p>
+		go to this page again via an
+		<h:link outcome="param00?foo=FOO&amp;bar=BAR" value="&lt;h:link&gt;" />
+	</p> 
+</h:body>
+</html>
