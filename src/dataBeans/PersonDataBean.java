@@ -1,6 +1,6 @@
-package aufgabe5.dataBeans;
+package dataBeans;
 
-import aufgabe5.model.Person;
+import model.Person;
 
 public class PersonDataBean extends DataBean<Person> {
 	

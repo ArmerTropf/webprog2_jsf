@@ -1,4 +1,4 @@
-package aufgabe5.businessTier;
+package businessTier;
 
 import java.util.List;
 
@@ -6,17 +6,16 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
-
-import aufgabe5.dataTier.IDataTier;
-import aufgabe5.model.Person;
+import dataTier.IDataTier;
+import model.Person;
 
 @ManagedBean(name="personsBean")
 @SessionScoped
 public class PersonsBean {
 
-	//hier kann die DataTier gewchselt werden(Dummy oder XML)
-	@ManagedProperty(value = "#{personDataTier}")
+	//hier kann die DataTier gewechselt werden(Dummy oder XML)
+	@ManagedProperty(value = "#{personXMLDataTier}")
+
 	private IDataTier<Person> dataTier;
 
 //	public PersonsBean(IDataTier<Person> dataTier) {
@@ -25,6 +24,15 @@ public class PersonsBean {
 	
 	public Person getPerson(int id){
 		return dataTier.get(id);
+	}
+	
+	//NICHT FERTIG
+	public void addPerson(String vorname, String nachname, String wohnort) {
+		Person newPerson = new Person();
+		newPerson.setVorname(vorname);
+		newPerson.setNachname(nachname);
+		newPerson.setWohnort(wohnort);
+					
 	}
 	
 	public Person getPersonByName(String name){

@@ -1,7 +1,7 @@
-package aufgabe5.businessTier;
+package businessTier;
 
-import aufgabe5.dataTier.PersonDummyDataTier;
-import aufgabe5.dataTier.PersonXMLDataTier;
+import dataTier.PersonDummyDataTier;
+import dataTier.PersonXMLDataTier;
 
 public class PersonsFactory {
 

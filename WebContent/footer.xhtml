@@ -3,16 +3,22 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 <head>
 
 </head>
 
 <ui:composition>
-<div style="background-color:powderblue;" align="center" >
-	<h2>Footer</h2>
-</div>
+	<div style="background-color: #{fp.backgroundColor}" align="center">
+
+		<h2>Navigation</h2>
+		<h:form>
+			<h:commandButton action="start"></h:commandButton>
+		</h:form>
+
+	</div>
 
 
 </ui:composition>

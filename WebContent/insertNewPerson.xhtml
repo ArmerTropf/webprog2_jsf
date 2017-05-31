@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui = "http://java.sun.com/jsf/facelets">
-<jsp:directive.page isELIgnored="false"></jsp:directive.page>
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<body>
+	<h:form>
+		<h:panelGrid columns="2" border="0">
+			<h:panelGroup>
+				<h:outputLabel value="Vorname" required="true" />
 
-<h:form>
-    	<h:inputText value="#{Aufgabe5_2.name}" required="true" />
-    	<h:commandButton value="submit" action="#{Aufgabe5_2.getSearch()}" />
-    	<h:messages />
+			</h:panelGroup>
+			<h:panelGroup>
+				<h:inputText value="" required="true"
+					requiredMessage="Text missing!"
+					validatorMessage="Minimum length of 5 required!">
+					<f:validateLength minimum="5" />
+				</h:inputText>
+
+			</h:panelGroup>
+
+			<h:panelGroup>
+				<h:outputLabel value="Nachname" />
+			</h:panelGroup>
+			<h:panelGroup>
+				<h:inputText value="" required="true" />
+			</h:panelGroup>
+
+			<h:panelGroup>
+				<h:outputLabel value="#{fp.foo}" />
+			</h:panelGroup>
+			<h:panelGroup>
+				<h:inputText value="" required="true" />
+				<br />
+			</h:panelGroup>
+
+			<h:panelGroup>
+
+			</h:panelGroup>
+			<h:commandButton value="submit" action="gogo" />
+			<h:panelGroup>
+
+			</h:panelGroup>
+		</h:panelGrid>
+		<h:messages />
 	</h:form>
+</body>
+</html>

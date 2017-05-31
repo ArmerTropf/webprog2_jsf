@@ -1,4 +1,4 @@
-package aufgabe5.dataTier;
+package dataTier;
 
 import java.io.File;
 
@@ -12,13 +12,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import aufgabe5.model.Person;
+import model.Person;
 
-@ManagedBean(name="personDataTier")
+@ManagedBean(name="personXMLDataTier")
 @ApplicationScoped
 public class PersonXMLDataTier extends CacheDataTier<Person> {
 
-	private String XML = "C:/Users/Andre Schriever/Documents/GitHub/webprog2/WebContent/aufgabe5/persons.xml";
+	private String XML = "hs/gitProjects/webprog2_jsf/WebContent/persons.xml";
 
 	public PersonXMLDataTier() {
 		searchUser("");

@@ -1,4 +1,4 @@
-package aufgabe5.dataTier;
+package dataTier;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import aufgabe5.model.Model;
+import model.Model;
 
 public class CacheDataTier<T extends Model> implements IDataTier<T> {
 

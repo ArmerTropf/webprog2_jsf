@@ -1,8 +1,8 @@
-package aufgabe5.dataTier;
+package dataTier;
 
 import javax.faces.bean.ManagedBean;
 
-import aufgabe5.model.Person;
+import model.Person;
 @ManagedBean(name="personDummyDataTier")
 public class PersonDummyDataTier extends CacheDataTier<Person> {
 	
@@ -11,7 +11,7 @@ public class PersonDummyDataTier extends CacheDataTier<Person> {
 		
 		person.setVorname("hans");
 		person.setNachname("wurst");
-		person.setWohnort("milchsstraße");
+		person.setWohnort("milchsstraï¿½e");
 		add(person);
 	}
 }

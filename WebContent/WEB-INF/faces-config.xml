@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faces-config
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
-    version="2.2">
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<application>
+		<resource-bundle>
+			<base-name>props.form</base-name>
+			<var>fp</var>
+		</resource-bundle>
+	</application>
+
+	<navigation-rule>
+		<from-view-id>/mvc/*</from-view-id>
+		<navigation-case>
+			<from-outcome>start</from-outcome>
+			<to-view-id>/start.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>system</from-outcome>
+			<to-view-id>/mvc/system.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>random</from-outcome>
+			<to-view-id>/mvc/random.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>

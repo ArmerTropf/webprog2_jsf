@@ -1,4 +1,4 @@
-package aufgabe5.controller;
+package controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
-import aufgabe5.businessTier.PersonsBean;
-import aufgabe5.dataBeans.PersonDataBean;
-import aufgabe5.dataBeans.PersonsDataBean;
-import aufgabe5.model.Person;
+import businessTier.PersonsBean;
+import dataBeans.PersonDataBean;
+import dataBeans.PersonsDataBean;
+import model.Person;
 
 /**
  * Servlet implementation class Aufgabe5_2

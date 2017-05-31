@@ -4,6 +4,7 @@
 .project
 .settings
 .tern-project
+.metadata
 
 # Log file
 *.log
