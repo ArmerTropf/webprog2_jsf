@@ -5,24 +5,9 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui = "http://java.sun.com/jsf/facelets">
 <jsp:directive.page isELIgnored="false"></jsp:directive.page>
-<head>
 
-<title>Aufgabe 5.2</title>
-</head>
-<body>
-	<H1>Auswahl</H1>
-
-	<a href="Listenausgabe.xhtml"> Listenausgabe </a>
-	<br />
-	
-	
-	<h:form>
+<h:form>
     	<h:inputText value="#{Aufgabe5_2.name}" required="true" />
     	<h:commandButton value="submit" action="#{Aufgabe5_2.getSearch()}" />
     	<h:messages />
 	</h:form>
-	<ui:insert name = "Footer">
-		<ui:include src="footer.xhtml"/>
-	</ui:insert>
-</body>
-</html>

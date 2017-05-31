@@ -6,7 +6,8 @@
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tp = "http://java.sun.com/jsf/composite/utils">
 
 <f:metadata>
 	<f:viewParam name="id" value="#{id}" />
@@ -19,11 +20,18 @@
 	<div id="header" />
 	
 	<div id="content" class="content">
+<!-- 		<tp:Component_Detailausgabe
+		    varUser = "HOMO"
+		    dataTableValue ="#{Aufgabe5_2.user}"
+		    userVorname = "GOGO"
+		    userNachname = "nachname"
+		    userWohnort = "wohnort"
+		/>  -->
 		<h:dataTable value="#{Aufgabe5_2.user}" var="user">
 			<h:column>
 				<br/>#{user.vorname} #{user.nachname} #{user.wohnort}   
 			</h:column>
-		</h:dataTable>
+</h:dataTable>
 	</div>
 	<div id="footer" align="center">
 		<ui:insert name="footer">
